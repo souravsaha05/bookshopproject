@@ -1,0 +1,170 @@
+package javaCrud;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+import javax.swing.UIManager;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+
+public class javaCrud {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField txtbname;
+	private JTextField textField_2;
+	private JTable table;
+	private JTable table_1;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					javaCrud window = new javaCrud();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public javaCrud() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 828, 492);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblBookShop = new JLabel("Book Shop");
+		lblBookShop.setBounds(325, 0, 169, 55);
+		lblBookShop.setFont(new Font("Tahoma", Font.BOLD, 30));
+		frame.getContentPane().add(lblBookShop);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(26, 68, 436, 206);
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Registation", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblBookName = new JLabel("Book Name");
+		lblBookName.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblBookName.setBounds(35, 41, 99, 37);
+		panel.add(lblBookName);
+		
+		JLabel lblEdition = new JLabel("Edition");
+		lblEdition.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEdition.setBounds(35, 91, 76, 41);
+		panel.add(lblEdition);
+		
+		JLabel lblPrice = new JLabel("Price");
+		lblPrice.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblPrice.setBounds(35, 141, 86, 41);
+		panel.add(lblPrice);
+		
+		textField = new JTextField();
+		textField.setBounds(176, 148, 248, 29);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		txtbname = new JTextField();
+		txtbname.setColumns(10);
+		txtbname.setBounds(176, 46, 248, 29);
+		panel.add(txtbname);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(176, 101, 248, 29);
+		panel.add(textField_2);
+		
+		JButton btnNewButton = new JButton("Exit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBounds(185, 287, 128, 60);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnSave = new JButton("Update");
+		btnSave.setBounds(487, 361, 128, 60);
+		btnSave.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		frame.getContentPane().add(btnSave);
+		
+		JButton btnClear = new JButton(" Clear");
+		btnClear.setBounds(325, 287, 128, 60);
+		btnClear.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		frame.getContentPane().add(btnClear);
+		
+		table = new JTable();
+		table.setBounds(510, 328, 251, -225);
+		frame.getContentPane().add(table);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(465, 68, 333, 284);
+		frame.getContentPane().add(scrollPane);
+		
+		table_1 = new JTable();
+		scrollPane.setViewportView(table_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Search", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBounds(45, 360, 430, 72);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblBookId = new JLabel("Book Id");
+		lblBookId.setBounds(29, 24, 76, 20);
+		lblBookId.setFont(new Font("Tahoma", Font.BOLD, 16));
+		panel_1.add(lblBookId);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(129, 23, 253, 22);
+		textField_1.setColumns(10);
+		panel_1.add(textField_1);
+		
+		JButton btnSave_1 = new JButton("Save");
+		btnSave_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSave_1.setBounds(45, 287, 128, 60);
+		frame.getContentPane().add(btnSave_1);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnDelete.setBounds(655, 361, 128, 60);
+		frame.getContentPane().add(btnDelete);
+	}
+}
